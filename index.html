@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soyaki Kori — Candidature Vice-Capitaine de l'Aube d'Or</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0805;
+  --bg-deep: #050403;
+  --bg-panel: #12100a;
+  --bg-panel-alt: #1a1610;
+  --gold: #d4a853;
+  --gold-bright: #f0cb6a;
+  --gold-dark: #8a6a2e;
+  --gold-muted: #6b5228;
+  --ivory: #f4ead5;
+  --ivory-dim: #c9bfa8;
+  --parchment: #ebe0c5;
+  --crimson: #8b1a1a;
+  --border: rgba(212, 168, 83, 0.25);
+  --border-strong: rgba(212, 168, 83, 0.6);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ivory);
+  font-family: 'Cormorant Garamond', 'EB Garamond', serif;
+  font-size: 18px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+/* Ambient gold glow */
+body::after {
+  content: '';
+  position: fixed;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, rgba(212, 168, 83, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══════════════════════════════════════════════════ */
+/* HERO */
+/* ═══════════════════════════════════════════════════ */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4rem 2rem;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(212, 168, 83, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(139, 26, 26, 0.08) 0%, transparent 40%),
+    linear-gradient(180deg, #050403 0%, #0a0805 50%, #050403 100%);
+  z-index: -1;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(212, 168, 83, 0.02) 0 1px, transparent 1px 40px),
+    repeating-linear-gradient(-45deg, rgba(212, 168, 83, 0.02) 0 1px, transparent 1px 40px);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 900px;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.4s ease-out;
+}
+
+.crest {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 2.5rem;
+  position: relative;
+  animation: crestGlow 4s ease-in-out infinite alternate;
+}
+
+.crest svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 20px rgba(212, 168, 83, 0.4));
+}
+
+@keyframes crestGlow {
+  from { filter: drop-shadow(0 0 15px rgba(212, 168, 83, 0.3)); }
+  to { filter: drop-shadow(0 0 35px rgba(212, 168, 83, 0.6)); }
+}
+
+.hero-kicker {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.5em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.4s forwards;
+}
+
+.hero-kicker::before, .hero-kicker::after {
+  content: '✦';
+  margin: 0 1.5rem;
+  color: var(--gold-dark);
+}
+
+.hero h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ivory);
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-out 0.6s forwards;
+}
+
+.hero h1 .surname {
+  display: block;
+  font-size: 0.55em;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.4em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-style: italic;
+  color: var(--ivory-dim);
+  margin-top: 2rem;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease-out 0.9s forwards;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1.2s forwards;
+}
+
+.ornament-line {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.ornament-diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  margin: 0 1rem;
+  box-shadow: 0 0 10px var(--gold);
+}
+
+.hero-meta {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out 1.5s forwards;
+}
+
+.hero-meta-item {
+  text-align: center;
+}
+
+.hero-meta-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.hero-meta-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--ivory);
+  font-style: italic;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-hint::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(180deg, var(--gold-dark), transparent);
+  margin: 0.8rem auto 0;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ═══════════════════════════════════════════════════ */
+/* NAVIGATION */
+/* ═══════════════════════════════════════════════════ */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 8, 5, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+nav.visible { transform: translateY(0); }
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--ivory-dim);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover { color: var(--gold-bright); }
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+/* ═══════════════════════════════════════════════════ */
+/* SECTIONS */
+/* ═══════════════════════════════════════════════════ */
+
+section {
+  position: relative;
+  z-index: 2;
+  padding: 7rem 2rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.section-number {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.5em;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: var(--ivory);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--ivory-dim);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ACCUEIL */
+.section-accueil {
+  background:
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+}
+
+.accueil-card {
+  background:
+    linear-gradient(135deg, rgba(26, 22, 16, 0.8) 0%, rgba(18, 16, 10, 0.8) 100%);
+  border: 1px solid var(--border);
+  padding: 4rem 3rem;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accueil-card::before, .accueil-card::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--gold);
+}
+
+.accueil-card::before {
+  top: -2px; left: -2px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.accueil-card::after {
+  bottom: -2px; right: -2px;
+  border-left: none;
+  border-top: none;
+}
+
+.accueil-card p {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: var(--ivory);
+  margin-bottom: 1.5rem;
+}
+
+.accueil-card p:last-child { margin-bottom: 0; }
+
+.accueil-card em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.accueil-card strong {
+  color: var(--gold-bright);
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 0.95em;
+  letter-spacing: 0.05em;
+}
+
+/* PRESENTATION */
+.section-presentation {
+  background: var(--bg-deep);
+  position: relative;
+}
+
+.section-presentation::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(212, 168, 83, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.id-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  padding: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.id-card-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.id-card-seal {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.id-card-name {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  color: var(--ivory);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.id-card-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-top: 0.3rem;
+}
+
+.id-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem 3rem;
+}
+
+.id-field {
+  border-left: 2px solid var(--gold-dark);
+  padding-left: 1.2rem;
+}
+
+.id-field-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.id-field-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--ivory);
+  line-height: 1.5;
+}
+
+.id-field-value.italic { font-style: italic; color: var(--ivory-dim); }
+
+/* HISTOIRE */
+.section-histoire {
+  background:
+    linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
+}
+
+.histoire-content {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+
+.histoire-content p {
+  margin-bottom: 1.8rem;
+  color: var(--ivory);
+}
+
+.histoire-content p:first-of-type::first-letter {
+  font-family: 'Cinzel', serif;
+  font-size: 4.5rem;
+  float: left;
+  line-height: 0.9;
+  padding: 0.3rem 0.8rem 0 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.histoire-content strong {
+  color: var(--gold-bright);
+  font-weight: 500;
+}
+
+.histoire-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.histoire-divider::before, .histoire-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+  max-width: 150px;
+}
+
+.histoire-divider span {
+  margin: 0 2rem;
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+/* MOTIVATION */
+.section-motivation {
+  background: var(--bg-deep);
+  position: relative;
+}
+
+.motivation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.motivation-text {
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+
+.motivation-text p { margin-bottom: 1.5rem; color: var(--ivory); }
+
+.motivation-text strong {
+  color: var(--gold-bright);
+  font-family: 'Cinzel', serif;
+  font-size: 0.95em;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.motivation-visual {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motivation-visual svg {
+  width: 100%;
+  height: 100%;
+  animation: slowRotate 40s linear infinite;
+}
+
+@keyframes slowRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.motivation-visual-center {
+  position: absolute;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+}
+
+.motivation-visual-center-top {
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.motivation-visual-center-main {
+  font-size: 2rem;
+  color: var(--ivory);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.motivation-visual-center-bottom {
+  font-style: italic;
+  color: var(--ivory-dim);
+  margin-top: 0.5rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+@media (max-width: 800px) {
+  .motivation-grid { grid-template-columns: 1fr; }
+}
+
+/* DEVOIRS */
+.section-devoirs {
+  background:
+    linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
+}
+
+.devoirs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.devoir-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.devoir-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 168, 83, 0.15);
+}
+
+.devoir-card-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(212, 168, 83, 0.1), rgba(212, 168, 83, 0.02));
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+
+.devoir-card-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.devoir-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  color: var(--gold-bright);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.devoir-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.devoir-card li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--ivory);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.devoir-card li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.7rem;
+  top: 0.4rem;
+}
+
+/* HORAIRES */
+.section-horaires {
+  background: var(--bg-deep);
+  position: relative;
+}
+
+.horaires-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.horaires-total {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.horaires-total-number {
+  font-family: 'Cinzel', serif;
+  font-size: 4.5rem;
+  color: var(--gold);
+  line-height: 1;
+  font-weight: 700;
+  text-shadow: 0 0 40px rgba(212, 168, 83, 0.3);
+}
+
+.horaires-total-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.horaires-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 700px) {
+  .horaires-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.day-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  padding: 1.5rem 0.8rem;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.day-card.special {
+  border-color: var(--gold-dark);
+  background: linear-gradient(180deg, var(--bg-panel) 0%, rgba(139, 106, 46, 0.1) 100%);
+}
+
+.day-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.day-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.day-hours {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--ivory);
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.day-hours-small { font-size: 0.85rem; color: var(--ivory-dim); }
+
+.horaires-note {
+  text-align: center;
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 2rem auto 0;
+  line-height: 1.7;
+}
+
+/* CARACTERE */
+.section-caractere {
+  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
+}
+
+.traits-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.trait-block {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  padding: 2rem;
+}
+
+.trait-block.primary {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--bg-panel) 0%, rgba(139, 106, 46, 0.08) 100%);
+  border-color: var(--gold-dark);
+}
+
+.trait-block-title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+
+.traits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.trait {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.trait-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--gold-bright);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.trait-desc {
+  font-size: 1rem;
+  color: var(--ivory);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.relations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.relation-card {
+  background: rgba(10, 8, 5, 0.5);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.relation-card:hover {
+  border-color: var(--gold);
+  background: rgba(212, 168, 83, 0.03);
+}
+
+.relation-target {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.relation-desc {
+  font-size: 0.95rem;
+  color: var(--ivory-dim);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* FOOTER / OOC */
+.section-footer {
+  background: var(--bg-deep);
+  border-top: 1px solid var(--border);
+  padding: 5rem 2rem 3rem;
+  position: relative;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-seal {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 2rem;
+}
+
+.footer-title {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: var(--ivory);
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.footer-subtitle {
+  text-align: center;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.ooc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.ooc-item {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+}
+
+.ooc-item-icon {
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.ooc-item-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.ooc-item-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: var(--ivory);
+  line-height: 1.5;
+}
+
+.ooc-item-value.code {
+  font-family: 'Courier New', monospace;
+  background: rgba(212, 168, 83, 0.08);
+  padding: 0.3rem 0.8rem;
+  display: inline-block;
+  border: 1px solid var(--border);
+  letter-spacing: 0.05em;
+}
+
+.experience-block {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.experience-block-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+}
+
+.experience-block p {
+  color: var(--ivory);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.experience-block p + p { margin-top: 1rem; }
+
+.signature {
+  text-align: center;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+.signature-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.signature-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: var(--ivory);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.signature-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--ivory-dim);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.copyright {
+  text-align: center;
+  color: var(--gold-dark);
+  font-size: 0.8rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.2em;
+  margin-top: 3rem;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════ */
+/* ANIMATIONS */
+/* ═══════════════════════════════════════════════════ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">✦ Aube d'Or ✦</div>
+    <ul class="nav-links">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#presentation">Présentation</a></li>
+      <li><a href="#histoire">Histoire</a></li>
+      <li><a href="#motivation">Motivation</a></li>
+      <li><a href="#devoirs">Devoirs</a></li>
+      <li><a href="#horaires">Horaires</a></li>
+      <li><a href="#caractere">Caractère</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+
+    <div class="crest">
+      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="goldGrad" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#f0cb6a"/>
+            <stop offset="70%" stop-color="#d4a853"/>
+            <stop offset="100%" stop-color="#8a6a2e"/>
+          </radialGradient>
+        </defs>
+        <!-- Outer ring -->
+        <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="48" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" opacity="0.5"/>
+        <!-- Sun rays -->
+        <g transform="translate(60 60)">
+          <g>
+            <path d="M 0 -45 L 3 -20 L 0 -18 L -3 -20 Z" fill="url(#goldGrad)"/>
+            <path d="M 0 -45 L 3 -20 L 0 -18 L -3 -20 Z" fill="url(#goldGrad)" transform="rotate(45)"/>
+            <path d="M 0 -45 L 3 -20 L 0 -18 L -3 -20 Z" fill="url(#goldGrad)" transform="rotate(90)"/>
+            <path d="M 0 -45 L 3 -20 L 0 -18 L -3 -20 Z" fill="url(#goldGrad)" transform="rotate(135)"/>
+            <path d="M 0 -45 L 3 -20 L 0 -18 L -3 -20 Z" fill="url(#goldGrad)" transform="rotate(180)"/>
+            <path d="M 0 -45 L 3 -20 L 0 -18 L -3 -20 Z" fill="url(#goldGrad)" transform="rotate(225)"/>
+            <path d="M 0 -45 L 3 -20 L 0 -18 L -3 -20 Z" fill="url(#goldGrad)" transform="rotate(270)"/>
+            <path d="M 0 -45 L 3 -20 L 0 -18 L -3 -20 Z" fill="url(#goldGrad)" transform="rotate(315)"/>
+          </g>
+          <!-- Small rays between -->
+          <g opacity="0.7">
+            <path d="M 0 -32 L 2 -22 L 0 -21 L -2 -22 Z" fill="#d4a853" transform="rotate(22.5)"/>
+            <path d="M 0 -32 L 2 -22 L 0 -21 L -2 -22 Z" fill="#d4a853" transform="rotate(67.5)"/>
+            <path d="M 0 -32 L 2 -22 L 0 -21 L -2 -22 Z" fill="#d4a853" transform="rotate(112.5)"/>
+            <path d="M 0 -32 L 2 -22 L 0 -21 L -2 -22 Z" fill="#d4a853" transform="rotate(157.5)"/>
+            <path d="M 0 -32 L 2 -22 L 0 -21 L -2 -22 Z" fill="#d4a853" transform="rotate(202.5)"/>
+            <path d="M 0 -32 L 2 -22 L 0 -21 L -2 -22 Z" fill="#d4a853" transform="rotate(247.5)"/>
+            <path d="M 0 -32 L 2 -22 L 0 -21 L -2 -22 Z" fill="#d4a853" transform="rotate(292.5)"/>
+            <path d="M 0 -32 L 2 -22 L 0 -21 L -2 -22 Z" fill="#d4a853" transform="rotate(337.5)"/>
+          </g>
+        </g>
+        <!-- Central sun -->
+        <circle cx="60" cy="60" r="14" fill="url(#goldGrad)"/>
+        <circle cx="60" cy="60" r="9" fill="#0a0805"/>
+        <!-- Center trefoil (black clover) -->
+        <g transform="translate(60 60)">
+          <ellipse cx="0" cy="-3" rx="2.5" ry="3.5" fill="url(#goldGrad)"/>
+          <ellipse cx="-3" cy="1.5" rx="2.5" ry="3.5" fill="url(#goldGrad)" transform="rotate(-60 -3 1.5)"/>
+          <ellipse cx="3" cy="1.5" rx="2.5" ry="3.5" fill="url(#goldGrad)" transform="rotate(60 3 1.5)"/>
+          <line x1="0" y1="1" x2="0" y2="5" stroke="url(#goldGrad)" stroke-width="1"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-kicker">Candidature au poste de Vice-Capitaine</div>
+
+    <h1>
+      <span class="surname">Soyaki</span>
+      Kori
+    </h1>
+
+    <div class="ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line"></div>
+    </div>
+
+    <p class="hero-title">« Servir dans l'ombre du soleil levant »</p>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Compagnie</div>
+        <div class="hero-meta-value">L'Aube d'Or</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Royaume</div>
+        <div class="hero-meta-value">Clover</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Serveur</div>
+        <div class="hero-meta-value">NOX</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Parcourir la candidature</div>
+</section>
+
+<!-- ═══════════ ACCUEIL ═══════════ -->
+<section class="section-accueil" id="accueil">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-number">✦ I ✦</div>
+      <h2 class="section-title">Accueil</h2>
+      <p class="section-subtitle">Une adresse au Capitaine et au staff</p>
+    </div>
+
+    <div class="accueil-card reveal">
+      <p>Bonjour au <strong>Capitaine de l'Aube d'Or</strong>, au staff et aux membres de la compagnie,</p>
+
+      <p>Je me permets de déposer aujourd'hui ma candidature pour le poste de <strong>Vice-Capitaine de l'Aube d'Or</strong>. Je suis conscient du poids d'un tel rôle, surtout dans le contexte actuel de Clover — un royaume blessé, un nouvel Empereur-Mage à peine élu, et une Triade sombre qui renaît de ses cendres à Spade.</p>
+
+      <p>Plus que jamais, les compagnies ont besoin de <em>structures solides</em>, d'encadrants fiables et de membres prêts à servir sans chercher la lumière pour eux-mêmes. C'est dans cet esprit que je vous adresse cette candidature.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PRESENTATION RP ═══════════ -->
+<section class="section-presentation" id="presentation">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-number">✦ II ✦</div>
+      <h2 class="section-title">Présentation RP</h2>
+      <p class="section-subtitle">Identité, origine, attache</p>
+    </div>
+
+    <div class="id-card reveal">
+      <div class="id-card-header">
+        <div class="id-card-seal">
+          <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="38" fill="none" stroke="#d4a853" stroke-width="1"/>
+            <circle cx="40" cy="40" r="30" fill="none" stroke="#d4a853" stroke-width="0.5"/>
+            <text x="40" y="48" text-anchor="middle" fill="#d4a853" font-family="Cinzel" font-size="22" font-weight="700">S</text>
+          </svg>
+        </div>
+        <div>
+          <div class="id-card-name">Soyaki Kori</div>
+          <div class="id-card-role">Candidat Vice-Capitaine</div>
+        </div>
+      </div>
+
+      <div class="id-grid">
+        <div class="id-field">
+          <div class="id-field-label">Nom & Prénom</div>
+          <div class="id-field-value">Soyaki Kori</div>
+        </div>
+
+        <div class="id-field">
+          <div class="id-field-label">Âge</div>
+          <div class="id-field-value">17 ans</div>
+        </div>
+
+        <div class="id-field">
+          <div class="id-field-label">Royaume d'origine</div>
+          <div class="id-field-value">Clover</div>
+        </div>
+
+        <div class="id-field">
+          <div class="id-field-label">Lignée</div>
+          <div class="id-field-value">Famille Soyaki — lignée de chevaliers-mages reconnue dans tout Clover</div>
+        </div>
+
+        <div class="id-field">
+          <div class="id-field-label">Frère aîné</div>
+          <div class="id-field-value">Chizen Soyaki — assistant de l'Empereur-Mage</div>
+        </div>
+
+        <div class="id-field">
+          <div class="id-field-label">Père</div>
+          <div class="id-field-value">Grand chevalier-mage de la Compagnie Perdue, tombé en mission</div>
+        </div>
+
+        <div class="id-field">
+          <div class="id-field-label">Attache actuelle</div>
+          <div class="id-field-value">Candidat à l'Aube d'Or</div>
+        </div>
+
+        <div class="id-field">
+          <div class="id-field-label">Magie</div>
+          <div class="id-field-value italic">À révéler lors de l'entretien avec le Capitaine, ou à la première connexion IG selon la demande du staff.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ HISTOIRE ═══════════ -->
+<section class="section-histoire" id="histoire">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-number">✦ III ✦</div>
+      <h2 class="section-title">Histoire du Personnage</h2>
+      <p class="section-subtitle">Le récit d'une vie forgée dans l'ombre</p>
+    </div>
+
+    <div class="histoire-content reveal">
+      <p>Kori est né dans une maison marquée par l'absence. Le père des frères Soyaki est mort en mission alors que Kori était très jeune — trop jeune pour garder de lui autre chose que des fragments : une silhouette imposante, une voix grave, et le souvenir du jour où son frère aîné Chizen s'est effondré à genoux en apprenant la nouvelle.</p>
+
+      <p>C'est Chizen qui a élevé Kori autant qu'il l'a pu. Pendant que son frère s'entraînait avec acharnement pour honorer la mémoire de leur père, Kori grandissait dans son ombre — <strong>observateur, silencieux, studieux</strong>. Là où Chizen voulait devenir fort pour être <em>vu</em>, Kori a très vite compris qu'il serait plus utile en restant <em>invisible</em>. Les autres enfants ne l'ont jamais maltraité comme ils l'avaient fait avec son frère, parce qu'ils ne le remarquaient tout simplement pas. Kori a fait de cet effacement une force.</p>
+
+      <div class="histoire-divider"><span>✦</span></div>
+
+      <p>Quand Chizen a été pris sous l'aile de <strong>Solarius Valdorré</strong>, Kori a continué son propre chemin. Il a lu tous les manuels de stratégie militaire que la bibliothèque familiale contenait, étudié les organisations des neuf compagnies, mémorisé les noms des capitaines, des vice-capitaines, leurs magies, leurs faits d'armes. Il a appris à manier l'épée avec un vieux maître d'armes de Clover, à soigner les blessures légères, à rédiger des rapports clairs.</p>
+
+      <p>Il s'est forgé un esprit d'intendance et de discipline avant même d'avoir reçu son grimoire.</p>
+
+      <p>À <strong>15 ans</strong>, il reçoit son grimoire à la Tour. Il ne le montre à personne pendant plusieurs mois, pas même à Chizen. Il veut d'abord le comprendre seul, apprivoiser sa magie sans pression, sans attente extérieure.</p>
+
+      <div class="histoire-divider"><span>✦</span></div>
+
+      <p>À <strong>17 ans</strong>, il estime être prêt. Il ne vise pas le prestige. Il ne vise pas la gloire. Il vise une place où son travail servira directement à la protection de Clover — et où il pourra, discrètement, veiller aussi sur son frère qui, lui, est exposé aux premières loges du pouvoir.</p>
+
+      <p>L'<strong>Aube d'Or</strong> est la compagnie qu'il a choisie. Pour sa rigueur. Pour son exigence. Pour sa réputation de compagnie d'élite qui sélectionne sur la valeur réelle et non sur le nom. Et pour une raison plus intime qu'il ne dira qu'au Capitaine en personne.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MOTIVATION ═══════════ -->
+<section class="section-motivation" id="motivation">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-number">✦ IV ✦</div>
+      <h2 class="section-title">Motivation</h2>
+      <p class="section-subtitle">Pourquoi ce poste, pourquoi maintenant</p>
+    </div>
+
+    <div class="motivation-grid">
+      <div class="motivation-text reveal">
+        <p>Je candidate au poste de <strong>Vice-Capitaine</strong>, pas de simple membre, pour une raison précise : c'est le rôle où je peux être le plus utile à la compagnie, compte tenu de mon caractère et de mes compétences.</p>
+
+        <p>Je ne suis pas un chevalier-mage qui cherche à briller au premier rang. Je suis un chevalier-mage qui aime <strong>organiser, épauler, structurer, anticiper</strong>. Un Capitaine a besoin d'un bras droit qui gère les dossiers qu'il n'a pas le temps de regarder, qui connaît chaque membre personnellement, qui prend les décisions mineures sans déranger son supérieur, et qui sait se taire quand il le faut.</p>
+
+        <p>Dans le contexte actuel — Clover affaibli, Spade qui se reconstitue, la Triade sombre de retour, les anomalies qui se multiplient — les compagnies n'ont pas le droit à l'approximation. Chaque recrue doit être évaluée sérieusement. Chaque mission doit être préparée avec rigueur. Chaque perte doit être comprise pour ne pas être répétée.</p>
+
+        <p>Enfin : mon frère sert l'Empereur-Mage au palais. Je servirai Clover dans une compagnie. <em>À nous deux, de deux côtés différents, nous continuerons ce que notre père a commencé.</em></p>
+      </div>
+
+      <div class="motivation-visual reveal">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <path id="circlePath" d="M 200,200 m -150,0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0"/>
+          </defs>
+          <!-- Outer rings -->
+          <circle cx="200" cy="200" r="180" fill="none" stroke="#d4a853" stroke-width="0.8" opacity="0.3"/>
+          <circle cx="200" cy="200" r="170" fill="none" stroke="#d4a853" stroke-width="0.4" opacity="0.5"/>
+          <circle cx="200" cy="200" r="120" fill="none" stroke="#d4a853" stroke-width="0.3" opacity="0.4"/>
+          <!-- Rune circle text -->
+          <text font-family="Cinzel" font-size="11" fill="#d4a853" letter-spacing="8" opacity="0.7">
+            <textPath href="#circlePath">✦ SERVIR ✦ PROTÉGER ✦ ÉPAULER ✦ DURER ✦ </textPath>
+          </text>
+          <!-- Decorative corners -->
+          <g stroke="#d4a853" stroke-width="1" fill="none" opacity="0.6">
+            <circle cx="200" cy="50" r="4"/>
+            <circle cx="200" cy="350" r="4"/>
+            <circle cx="50" cy="200" r="4"/>
+            <circle cx="350" cy="200" r="4"/>
+          </g>
+          <!-- 8-pointed star -->
+          <g transform="translate(200 200)" opacity="0.8">
+            <path d="M 0 -60 L 10 -10 L 60 0 L 10 10 L 0 60 L -10 10 L -60 0 L -10 -10 Z" fill="none" stroke="#d4a853" stroke-width="1"/>
+            <path d="M 0 -40 L 7 -7 L 40 0 L 7 7 L 0 40 L -7 7 L -40 0 L -7 -7 Z" fill="#d4a853" opacity="0.3"/>
+          </g>
+        </svg>
+        <div class="motivation-visual-center">
+          <div class="motivation-visual-center-top">Le serment</div>
+          <div class="motivation-visual-center-main">FIDES</div>
+          <div class="motivation-visual-center-bottom">Loyauté • Discrétion</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MES DEVOIRS ═══════════ -->
+<section class="section-devoirs" id="devoirs">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-number">✦ V ✦</div>
+      <h2 class="section-title">Mes Devoirs</h2>
+      <p class="section-subtitle">Les engagements d'un Vice-Capitaine</p>
+    </div>
+
+    <div class="devoirs-grid">
+
+      <div class="devoir-card reveal">
+        <div class="devoir-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2 L15 8 L22 9 L17 14 L18 21 L12 17 L6 21 L7 14 L2 9 L9 8 Z"/></svg>
+        </div>
+        <div class="devoir-card-title">Envers le Capitaine</div>
+        <ul>
+          <li>Être son relais direct et le décharger des tâches quotidiennes qu'il n'a pas le temps de traiter.</li>
+          <li>Le représenter en son absence sans jamais outrepasser ses prérogatives.</li>
+          <li>Remonter toute information sensible sans filtrer par confort.</li>
+          <li>Respecter ses décisions même en cas de désaccord. Discuter en privé, jamais en public.</li>
+        </ul>
+      </div>
+
+      <div class="devoir-card reveal">
+        <div class="devoir-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 12 m-5 0 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0"/><path d="M4 21 Q 4 15 12 15 Q 20 15 20 21"/></svg>
+        </div>
+        <div class="devoir-card-title">Envers la Compagnie</div>
+        <ul>
+          <li>Connaître chaque membre : magie, niveau, forces, fragilités, disponibilité.</li>
+          <li>Encadrer les nouvelles recrues dans leurs premières missions.</li>
+          <li>Tenir un suivi écrit (IC) des missions et des progrès.</li>
+          <li>Organiser des entraînements réguliers en l'absence du Capitaine.</li>
+          <li>Être accessible : un membre doit pouvoir me parler sans sentir qu'il dérange.</li>
+        </ul>
+      </div>
+
+      <div class="devoir-card reveal">
+        <div class="devoir-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2 L4 6 V 12 Q 4 18 12 22 Q 20 18 20 12 V 6 Z"/></svg>
+        </div>
+        <div class="devoir-card-title">Envers le Royaume</div>
+        <ul>
+          <li>Servir l'Empereur-Mage et les intérêts de Clover avant ceux de la compagnie.</li>
+          <li>Maintenir des relations saines avec les autres compagnies.</li>
+          <li>Ne jamais utiliser mon rang pour un avantage personnel ou familial.</li>
+        </ul>
+      </div>
+
+      <div class="devoir-card reveal">
+        <div class="devoir-card-icon">
+          <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9 H 20"/><circle cx="7" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <div class="devoir-card-title">Envers le Serveur</div>
+        <ul>
+          <li>Respecter et faire respecter le règlement.</li>
+          <li>Être un exemple de fair-play et de RP sérieux.</li>
+          <li>Participer activement à la vie du serveur : events, recrutement, entraide.</li>
+          <li>Signaler les comportements problématiques au staff plutôt que les gérer à chaud.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ HORAIRES ═══════════ -->
+<section class="section-horaires" id="horaires">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-number">✦ VI ✦</div>
+      <h2 class="section-title">Horaires</h2>
+      <p class="section-subtitle">Disponibilité hebdomadaire</p>
+    </div>
+
+    <div class="horaires-wrapper">
+
+      <div class="horaires-total reveal">
+        <div class="horaires-total-number">~40h</div>
+        <div class="horaires-total-label">de présence chaque semaine</div>
+      </div>
+
+      <div class="horaires-grid reveal">
+        <div class="day-card">
+          <div class="day-name">Lundi</div>
+          <div class="day-hours">18h<br>00h</div>
+        </div>
+        <div class="day-card">
+          <div class="day-name">Mardi</div>
+          <div class="day-hours">18h<br>00h</div>
+        </div>
+        <div class="day-card">
+          <div class="day-name">Mercredi</div>
+          <div class="day-hours">18h<br>00h</div>
+        </div>
+        <div class="day-card">
+          <div class="day-name">Jeudi</div>
+          <div class="day-hours">18h<br>00h</div>
+        </div>
+        <div class="day-card special">
+          <div class="day-name">Vendredi</div>
+          <div class="day-hours">21h<br>00h</div>
+        </div>
+        <div class="day-card">
+          <div class="day-name">Samedi</div>
+          <div class="day-hours">18h<br>00h</div>
+        </div>
+        <div class="day-card">
+          <div class="day-name">Dimanche</div>
+          <div class="day-hours">18h<br>00h</div>
+        </div>
+      </div>
+
+      <p class="horaires-note reveal">
+        Je peux ajuster mes créneaux en cas d'<em>event important</em> ou de besoin exceptionnel de la compagnie.
+        En cas d'absence imprévue, je préviendrai le Capitaine et les membres concernés dès que possible.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CARACTERE ═══════════ -->
+<section class="section-caractere" id="caractere">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-number">✦ VII ✦</div>
+      <h2 class="section-title">Caractère du Personnage</h2>
+      <p class="section-subtitle">L'âme de Soyaki Kori</p>
+    </div>
+
+    <div class="traits-layout">
+
+      <div class="trait-block primary reveal">
+        <div class="trait-block-title">Traits Dominants</div>
+        <div class="traits-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+          <div class="trait">
+            <div class="trait-name">❖ Loyal</div>
+            <div class="trait-desc">Une fois qu'il a donné sa parole, il la tient — même quand cela lui coûte.</div>
+          </div>
+          <div class="trait">
+            <div class="trait-name">❖ Discret</div>
+            <div class="trait-desc">Parle peu, observe beaucoup. Préfère écouter trois conversations plutôt qu'en monopoliser une.</div>
+          </div>
+          <div class="trait">
+            <div class="trait-name">❖ Stratège</div>
+            <div class="trait-desc">Réfléchit avant d'agir. Étudie ses adversaires, ses alliés, ses propres faiblesses.</div>
+          </div>
+          <div class="trait">
+            <div class="trait-name">❖ Humble</div>
+            <div class="trait-desc">Ne cherche pas les honneurs. Peut laisser un autre prendre le crédit tant que la mission est remplie.</div>
+          </div>
+          <div class="trait">
+            <div class="trait-name">❖ Méthodique</div>
+            <div class="trait-desc">Tout est rangé, noté, classé. Son grimoire, ses affaires, sa tête.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trait-block reveal">
+        <div class="trait-block-title">Traits Secondaires</div>
+        <div class="traits-list">
+          <div class="trait">
+            <div class="trait-name">Patient</div>
+            <div class="trait-desc">Il peut attendre des mois avant d'agir sur une information.</div>
+          </div>
+          <div class="trait">
+            <div class="trait-name">Exigeant envers lui-même</div>
+            <div class="trait-desc">Il se pardonne rarement ses erreurs.</div>
+          </div>
+          <div class="trait">
+            <div class="trait-name">Protecteur</div>
+            <div class="trait-desc">Particulièrement envers son frère Chizen et les membres qu'il encadre.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trait-block reveal">
+        <div class="trait-block-title">Faiblesses Assumées</div>
+        <div class="traits-list">
+          <div class="trait">
+            <div class="trait-name">Trop réservé</div>
+            <div class="trait-desc">A du mal à se livrer, ce qui crée une distance au début.</div>
+          </div>
+          <div class="trait">
+            <div class="trait-name">Jeune</div>
+            <div class="trait-desc">17 ans, c'est peu pour un tel poste. Il le sait, il devra le prouver.</div>
+          </div>
+          <div class="trait">
+            <div class="trait-name">Hésite à désobéir</div>
+            <div class="trait-desc">Sa loyauté peut être une faille. Un défaut sur lequel il travaille.</div>
+          </div>
+          <div class="trait">
+            <div class="trait-name">Peu charismatique au premier contact</div>
+            <div class="trait-desc">Son influence se construit sur la durée, pas sur l'instant.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="trait-block-title reveal" style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">Relation aux Autres</div>
+
+    <div class="relations-grid">
+      <div class="relation-card reveal">
+        <div class="relation-target">Ses Supérieurs</div>
+        <div class="relation-desc">Respect, écoute, franchise en privé.</div>
+      </div>
+      <div class="relation-card reveal">
+        <div class="relation-target">Ses Pairs</div>
+        <div class="relation-desc">Courtoisie. Distance pudique qui s'ouvre avec le temps.</div>
+      </div>
+      <div class="relation-card reveal">
+        <div class="relation-target">Ses Subordonnés</div>
+        <div class="relation-desc">Présent, exigeant mais juste, jamais humiliant.</div>
+      </div>
+      <div class="relation-card reveal">
+        <div class="relation-target">Ses Ennemis</div>
+        <div class="relation-desc">Froid, méthodique, sans haine personnelle.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER / OOC ═══════════ -->
+<section class="section-footer">
+  <div class="footer-content">
+
+    <div class="footer-seal">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#d4a853" stroke-width="1"/>
+        <circle cx="50" cy="50" r="38" fill="none" stroke="#d4a853" stroke-width="0.5" opacity="0.5"/>
+        <g transform="translate(50 50)">
+          <path d="M 0 -30 L 3 -8 L 0 -7 L -3 -8 Z" fill="#d4a853"/>
+          <path d="M 0 -30 L 3 -8 L 0 -7 L -3 -8 Z" fill="#d4a853" transform="rotate(90)"/>
+          <path d="M 0 -30 L 3 -8 L 0 -7 L -3 -8 Z" fill="#d4a853" transform="rotate(180)"/>
+          <path d="M 0 -30 L 3 -8 L 0 -7 L -3 -8 Z" fill="#d4a853" transform="rotate(270)"/>
+          <circle cx="0" cy="0" r="8" fill="#d4a853"/>
+          <circle cx="0" cy="0" r="5" fill="#0a0805"/>
+        </g>
+      </svg>
+    </div>
+
+    <h3 class="footer-title">Hors Rôle-Play</h3>
+    <p class="footer-subtitle">Le joueur derrière le personnage</p>
+
+    <div class="ooc-grid">
+      <div class="ooc-item">
+        <div class="ooc-item-label">Discord</div>
+        <div class="ooc-item-value"><span class="code">kori0254</span></div>
+      </div>
+      <div class="ooc-item">
+        <div class="ooc-item-label">Expérience RP</div>
+        <div class="ooc-item-value">Plus d'un an de RP sérieux</div>
+      </div>
+      <div class="ooc-item">
+        <div class="ooc-item-label">Disponibilité</div>
+        <div class="ooc-item-value">~40h / semaine</div>
+      </div>
+    </div>
+
+    <div class="experience-block">
+      <div class="experience-block-title">✦ Parcours ✦</div>
+      <p>J'ai géré plusieurs <strong style="color: var(--gold-bright);">factions sur des serveurs Demon Slayer</strong>, occupé un poste de <strong style="color: var(--gold-bright);">Haut Gradé sur un serveur My Hero Academia</strong>, et tenté l'expérience Black Clover par le passé — sans pouvoir m'y investir pleinement à cause d'un problème familial.</p>
+      <p>Je reviens aujourd'hui avec l'envie de <em>m'engager sur la durée</em>, dans un cadre sérieux comme celui que propose NOX. L'Aube d'Or coche toutes les cases : un serveur exigeant, un univers que j'aime, une compagnie où je peux apporter de la valeur sans avoir besoin d'être mis en avant.</p>
+    </div>
+
+    <div class="signature">
+      <p class="signature-quote">« Je reste à la disposition du Capitaine et du staff pour un entretien,<br>un test de RP, ou tout élément permettant de juger de ma candidature. »</p>
+
+      <div class="signature-name">Soyaki Kori</div>
+      <div class="signature-title">Candidat Vice-Capitaine — Compagnie de l'Aube d'Or</div>
+    </div>
+
+    <div class="copyright">✦ NOX — Black Clover Serious RP ✦</div>
+  </div>
+</section>
+
+<script>
+// Nav visibility
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) nav.classList.add('visible');
+  else nav.classList.remove('visible');
+});
+
+// Reveal animation on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Smooth stagger on reveal groups
+document.querySelectorAll('.devoirs-grid .reveal, .relations-grid .reveal, .ooc-grid > *').forEach((el, i) => {
+  el.style.transitionDelay = `${i * 0.1}s`;
+});
+</script>
+
+</body>
+</html>
