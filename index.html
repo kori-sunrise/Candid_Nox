@@ -40,7 +40,6 @@ body {
   min-height: 100vh;
 }
 
-/* Grain overlay */
 body::before {
   content: '';
   position: fixed;
@@ -52,7 +51,6 @@ body::before {
   mix-blend-mode: overlay;
 }
 
-/* Ambient gold glow */
 body::after {
   content: '';
   position: fixed;
@@ -65,10 +63,6 @@ body::after {
   pointer-events: none;
   z-index: 0;
 }
-
-/* ═══════════════════════════════════════════════════ */
-/* HERO */
-/* ═══════════════════════════════════════════════════ */
 
 .hero {
   min-height: 100vh;
@@ -210,9 +204,7 @@ body::after {
   animation: fadeIn 1.2s ease-out 1.5s forwards;
 }
 
-.hero-meta-item {
-  text-align: center;
-}
+.hero-meta-item { text-align: center; }
 
 .hero-meta-label {
   font-family: 'Cinzel', serif;
@@ -256,10 +248,6 @@ body::after {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(10px); }
 }
-
-/* ═══════════════════════════════════════════════════ */
-/* NAVIGATION */
-/* ═══════════════════════════════════════════════════ */
 
 nav {
   position: fixed;
@@ -328,10 +316,6 @@ nav.visible { transform: translateY(0); }
 
 .nav-links a:hover::after { width: 100%; }
 
-/* ═══════════════════════════════════════════════════ */
-/* SECTIONS */
-/* ═══════════════════════════════════════════════════ */
-
 section {
   position: relative;
   z-index: 2;
@@ -374,15 +358,12 @@ section {
   margin: 0 auto;
 }
 
-/* ACCUEIL */
 .section-accueil {
-  background:
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
 }
 
 .accueil-card {
-  background:
-    linear-gradient(135deg, rgba(26, 22, 16, 0.8) 0%, rgba(18, 16, 10, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(26, 22, 16, 0.8) 0%, rgba(18, 16, 10, 0.8) 100%);
   border: 1px solid var(--border);
   padding: 4rem 3rem;
   position: relative;
@@ -398,41 +379,14 @@ section {
   border: 2px solid var(--gold);
 }
 
-.accueil-card::before {
-  top: -2px; left: -2px;
-  border-right: none;
-  border-bottom: none;
-}
+.accueil-card::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+.accueil-card::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
-.accueil-card::after {
-  bottom: -2px; right: -2px;
-  border-left: none;
-  border-top: none;
-}
-
-.accueil-card p {
-  font-size: 1.2rem;
-  line-height: 1.9;
-  color: var(--ivory);
-  margin-bottom: 1.5rem;
-}
-
+.accueil-card p { font-size: 1.2rem; line-height: 1.9; color: var(--ivory); margin-bottom: 1.5rem; }
 .accueil-card p:last-child { margin-bottom: 0; }
+.accueil-card em { color: var(--gold); font-style: italic; }
+.accueil-card strong { color: var(--gold-bright); font-family: 'Cinzel', serif; font-weight: 600; font-size: 0.95em; letter-spacing: 0.05em; }
 
-.accueil-card em {
-  color: var(--gold);
-  font-style: italic;
-}
-
-.accueil-card strong {
-  color: var(--gold-bright);
-  font-family: 'Cinzel', serif;
-  font-weight: 600;
-  font-size: 0.95em;
-  letter-spacing: 0.05em;
-}
-
-/* PRESENTATION */
 .section-presentation {
   background: var(--bg-deep);
   position: relative;
@@ -442,8 +396,7 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at 70% 30%, rgba(212, 168, 83, 0.06) 0%, transparent 50%);
+  background: radial-gradient(circle at 70% 30%, rgba(212, 168, 83, 0.06) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -465,62 +418,24 @@ section {
   margin-bottom: 2rem;
 }
 
-.id-card-seal {
-  width: 80px;
-  height: 80px;
-  flex-shrink: 0;
-  position: relative;
-}
+.id-card-seal { width: 80px; height: 80px; flex-shrink: 0; position: relative; }
 
-.id-card-name {
-  font-family: 'Cinzel', serif;
-  font-size: 2.2rem;
-  color: var(--ivory);
-  letter-spacing: 0.05em;
-  font-weight: 600;
-}
+.id-card-name { font-family: 'Cinzel', serif; font-size: 2.2rem; color: var(--ivory); letter-spacing: 0.05em; font-weight: 600; }
+.id-card-role { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--gold); font-size: 1.1rem; margin-top: 0.3rem; }
 
-.id-card-role {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  color: var(--gold);
-  font-size: 1.1rem;
-  margin-top: 0.3rem;
-}
+.id-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem 3rem; }
 
-.id-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem 3rem;
-}
-
-.id-field {
-  border-left: 2px solid var(--gold-dark);
-  padding-left: 1.2rem;
-}
-
-.id-field-label {
-  font-family: 'Cinzel', serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 0.4rem;
-}
-
-.id-field-value {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  color: var(--ivory);
-  line-height: 1.5;
-}
-
+.id-field { border-left: 2px solid var(--gold-dark); padding-left: 1.2rem; }
+.id-field-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.4rem; }
+.id-field-value { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--ivory); line-height: 1.5; }
 .id-field-value.italic { font-style: italic; color: var(--ivory-dim); }
 
-/* HISTOIRE */
+/* ═══════════════════════════════════════════════════ */
+/* HISTOIRE — Version retravaillée                    */
+/* ═══════════════════════════════════════════════════ */
+
 .section-histoire {
-  background:
-    linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
 }
 
 .histoire-content {
@@ -530,26 +445,32 @@ section {
   line-height: 1.9;
 }
 
-.histoire-content p {
-  margin-bottom: 1.8rem;
-  color: var(--ivory);
-}
-
-.histoire-content p:first-of-type::first-letter {
+/* Lettrine sur le premier paragraphe de chaque bloc */
+.histoire-block-open::first-letter {
   font-family: 'Cinzel', serif;
   font-size: 4.5rem;
   float: left;
-  line-height: 0.9;
-  padding: 0.3rem 0.8rem 0 0;
+  line-height: 0.85;
+  padding: 0.3rem 0.9rem 0 0;
   color: var(--gold);
   font-weight: 700;
 }
 
-.histoire-content strong {
-  color: var(--gold-bright);
-  font-weight: 500;
+.histoire-content p {
+  margin-bottom: 1.8rem;
+  color: var(--ivory);
+  text-align: justify;
+  hyphens: auto;
 }
 
+.histoire-content p:last-child { margin-bottom: 0; }
+
+.histoire-content em {
+  font-style: italic;
+  color: var(--gold-bright);
+}
+
+/* Séparateur doré */
 .histoire-divider {
   display: flex;
   align-items: center;
@@ -571,7 +492,20 @@ section {
   font-size: 1.2rem;
 }
 
-/* MOTIVATION */
+/* Citation mise en valeur */
+.histoire-pullquote {
+  border-left: 2px solid var(--gold-dark);
+  margin: 0.5rem 0 1.8rem 0;
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: var(--ivory-dim);
+  text-align: left;
+}
+
+/* ═══════════════════════════════════════════════════ */
+
 .section-motivation {
   background: var(--bg-deep);
   position: relative;
@@ -586,20 +520,9 @@ section {
   margin: 0 auto;
 }
 
-.motivation-text {
-  font-size: 1.15rem;
-  line-height: 1.9;
-}
-
+.motivation-text { font-size: 1.15rem; line-height: 1.9; }
 .motivation-text p { margin-bottom: 1.5rem; color: var(--ivory); }
-
-.motivation-text strong {
-  color: var(--gold-bright);
-  font-family: 'Cinzel', serif;
-  font-size: 0.95em;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-}
+.motivation-text strong { color: var(--gold-bright); font-family: 'Cinzel', serif; font-size: 0.95em; font-weight: 500; letter-spacing: 0.03em; }
 
 .motivation-visual {
   position: relative;
@@ -609,11 +532,7 @@ section {
   justify-content: center;
 }
 
-.motivation-visual svg {
-  width: 100%;
-  height: 100%;
-  animation: slowRotate 40s linear infinite;
-}
+.motivation-visual svg { width: 100%; height: 100%; animation: slowRotate 40s linear infinite; }
 
 @keyframes slowRotate {
   from { transform: rotate(0deg); }
@@ -626,42 +545,19 @@ section {
   text-align: center;
 }
 
-.motivation-visual-center-top {
-  font-size: 0.7rem;
-  letter-spacing: 0.4em;
-  color: var(--gold);
-  margin-bottom: 0.5rem;
-}
-
-.motivation-visual-center-main {
-  font-size: 2rem;
-  color: var(--ivory);
-  letter-spacing: 0.1em;
-  font-weight: 600;
-}
-
-.motivation-visual-center-bottom {
-  font-style: italic;
-  color: var(--ivory-dim);
-  margin-top: 0.5rem;
-  font-family: 'Cormorant Garamond', serif;
-}
+.motivation-visual-center-top { font-size: 0.7rem; letter-spacing: 0.4em; color: var(--gold); margin-bottom: 0.5rem; }
+.motivation-visual-center-main { font-size: 2rem; color: var(--ivory); letter-spacing: 0.1em; font-weight: 600; }
+.motivation-visual-center-bottom { font-style: italic; color: var(--ivory-dim); margin-top: 0.5rem; font-family: 'Cormorant Garamond', serif; }
 
 @media (max-width: 800px) {
   .motivation-grid { grid-template-columns: 1fr; }
 }
 
-/* DEVOIRS */
 .section-devoirs {
-  background:
-    linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
 }
 
-.devoirs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-}
+.devoirs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 
 .devoir-card {
   background: var(--bg-panel);
@@ -689,13 +585,7 @@ section {
   border-radius: 50%;
 }
 
-.devoir-card-icon svg {
-  width: 28px;
-  height: 28px;
-  stroke: var(--gold);
-  fill: none;
-  stroke-width: 1.5;
-}
+.devoir-card-icon svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
 
 .devoir-card-title {
   font-family: 'Cinzel', serif;
@@ -707,10 +597,7 @@ section {
   font-weight: 600;
 }
 
-.devoir-card ul {
-  list-style: none;
-  padding: 0;
-}
+.devoir-card ul { list-style: none; padding: 0; }
 
 .devoir-card li {
   position: relative;
@@ -730,49 +617,17 @@ section {
   top: 0.4rem;
 }
 
-/* HORAIRES */
-.section-horaires {
-  background: var(--bg-deep);
-  position: relative;
-}
+.section-horaires { background: var(--bg-deep); position: relative; }
 
-.horaires-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-}
+.horaires-wrapper { max-width: 900px; margin: 0 auto; }
 
-.horaires-total {
-  text-align: center;
-  margin-bottom: 3rem;
-}
+.horaires-total { text-align: center; margin-bottom: 3rem; }
+.horaires-total-number { font-family: 'Cinzel', serif; font-size: 4.5rem; color: var(--gold); line-height: 1; font-weight: 700; text-shadow: 0 0 40px rgba(212, 168, 83, 0.3); }
+.horaires-total-label { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--ivory-dim); font-size: 1.2rem; margin-top: 0.5rem; }
 
-.horaires-total-number {
-  font-family: 'Cinzel', serif;
-  font-size: 4.5rem;
-  color: var(--gold);
-  line-height: 1;
-  font-weight: 700;
-  text-shadow: 0 0 40px rgba(212, 168, 83, 0.3);
-}
+.horaires-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.8rem; margin-bottom: 2rem; }
 
-.horaires-total-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  color: var(--ivory-dim);
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
-
-.horaires-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 0.8rem;
-  margin-bottom: 2rem;
-}
-
-@media (max-width: 700px) {
-  .horaires-grid { grid-template-columns: repeat(2, 1fr); }
-}
+@media (max-width: 700px) { .horaires-grid { grid-template-columns: repeat(2, 1fr); } }
 
 .day-card {
   background: var(--bg-panel);
@@ -788,57 +643,19 @@ section {
   background: linear-gradient(180deg, var(--bg-panel) 0%, rgba(139, 106, 46, 0.1) 100%);
 }
 
-.day-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-2px);
-}
+.day-card:hover { border-color: var(--gold); transform: translateY(-2px); }
 
-.day-name {
-  font-family: 'Cinzel', serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 0.8rem;
-}
-
-.day-hours {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
-  color: var(--ivory);
-  line-height: 1.3;
-  font-weight: 500;
-}
-
+.day-name { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.8rem; }
+.day-hours { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--ivory); line-height: 1.3; font-weight: 500; }
 .day-hours-small { font-size: 0.85rem; color: var(--ivory-dim); }
 
-.horaires-note {
-  text-align: center;
-  font-style: italic;
-  color: var(--ivory-dim);
-  font-size: 1rem;
-  max-width: 600px;
-  margin: 2rem auto 0;
-  line-height: 1.7;
-}
+.horaires-note { text-align: center; font-style: italic; color: var(--ivory-dim); font-size: 1rem; max-width: 600px; margin: 2rem auto 0; line-height: 1.7; }
 
-/* CARACTERE */
-.section-caractere {
-  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%);
-}
+.section-caractere { background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 100%); }
 
-.traits-layout {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
+.traits-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
 
-.trait-block {
-  background: var(--bg-panel);
-  border: 1px solid var(--border);
-  padding: 2rem;
-}
+.trait-block { background: var(--bg-panel); border: 1px solid var(--border); padding: 2rem; }
 
 .trait-block.primary {
   grid-column: 1 / -1;
@@ -846,50 +663,15 @@ section {
   border-color: var(--gold-dark);
 }
 
-.trait-block-title {
-  font-family: 'Cinzel', serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.25em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--border);
-  font-weight: 600;
-}
+.trait-block-title { font-family: 'Cinzel', serif; font-size: 0.9rem; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border); font-weight: 600; }
 
-.traits-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
+.traits-list { display: flex; flex-direction: column; gap: 1.2rem; }
 
-.trait {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
+.trait { display: flex; flex-direction: column; gap: 0.3rem; }
+.trait-name { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--gold-bright); font-weight: 600; letter-spacing: 0.05em; }
+.trait-desc { font-size: 1rem; color: var(--ivory); line-height: 1.5; font-style: italic; }
 
-.trait-name {
-  font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  color: var(--gold-bright);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-}
-
-.trait-desc {
-  font-size: 1rem;
-  color: var(--ivory);
-  line-height: 1.5;
-  font-style: italic;
-}
-
-.relations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
+.relations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
 
 .relation-card {
   background: rgba(10, 8, 5, 0.5);
@@ -899,182 +681,36 @@ section {
   transition: all 0.3s;
 }
 
-.relation-card:hover {
-  border-color: var(--gold);
-  background: rgba(212, 168, 83, 0.03);
-}
+.relation-card:hover { border-color: var(--gold); background: rgba(212, 168, 83, 0.03); }
+.relation-target { font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.8rem; }
+.relation-desc { font-size: 0.95rem; color: var(--ivory-dim); font-style: italic; line-height: 1.5; }
 
-.relation-target {
-  font-family: 'Cinzel', serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 0.8rem;
-}
+.section-footer { background: var(--bg-deep); border-top: 1px solid var(--border); padding: 5rem 2rem 3rem; position: relative; }
 
-.relation-desc {
-  font-size: 0.95rem;
-  color: var(--ivory-dim);
-  font-style: italic;
-  line-height: 1.5;
-}
+.footer-content { max-width: 900px; margin: 0 auto; }
+.footer-seal { width: 100px; height: 100px; margin: 0 auto 2rem; }
+.footer-title { text-align: center; font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--ivory); margin-bottom: 1rem; letter-spacing: 0.1em; }
+.footer-subtitle { text-align: center; font-style: italic; color: var(--gold); margin-bottom: 3rem; font-size: 1.1rem; }
 
-/* FOOTER / OOC */
-.section-footer {
-  background: var(--bg-deep);
-  border-top: 1px solid var(--border);
-  padding: 5rem 2rem 3rem;
-  position: relative;
-}
+.ooc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
 
-.footer-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
+.ooc-item { background: var(--bg-panel); border: 1px solid var(--border); padding: 2rem; text-align: center; }
+.ooc-item-icon { font-size: 1.8rem; color: var(--gold); margin-bottom: 1rem; }
+.ooc-item-label { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.8rem; }
+.ooc-item-value { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--ivory); line-height: 1.5; }
+.ooc-item-value.code { font-family: 'Courier New', monospace; background: rgba(212, 168, 83, 0.08); padding: 0.3rem 0.8rem; display: inline-block; border: 1px solid var(--border); letter-spacing: 0.05em; }
 
-.footer-seal {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 2rem;
-}
-
-.footer-title {
-  text-align: center;
-  font-family: 'Cinzel', serif;
-  font-size: 1.8rem;
-  color: var(--ivory);
-  margin-bottom: 1rem;
-  letter-spacing: 0.1em;
-}
-
-.footer-subtitle {
-  text-align: center;
-  font-style: italic;
-  color: var(--gold);
-  margin-bottom: 3rem;
-  font-size: 1.1rem;
-}
-
-.ooc-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.ooc-item {
-  background: var(--bg-panel);
-  border: 1px solid var(--border);
-  padding: 2rem;
-  text-align: center;
-}
-
-.ooc-item-icon {
-  font-size: 1.8rem;
-  color: var(--gold);
-  margin-bottom: 1rem;
-}
-
-.ooc-item-label {
-  font-family: 'Cinzel', serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 0.8rem;
-}
-
-.ooc-item-value {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  color: var(--ivory);
-  line-height: 1.5;
-}
-
-.ooc-item-value.code {
-  font-family: 'Courier New', monospace;
-  background: rgba(212, 168, 83, 0.08);
-  padding: 0.3rem 0.8rem;
-  display: inline-block;
-  border: 1px solid var(--border);
-  letter-spacing: 0.05em;
-}
-
-.experience-block {
-  background: var(--bg-panel);
-  border: 1px solid var(--border);
-  padding: 2.5rem;
-  margin-bottom: 3rem;
-}
-
-.experience-block-title {
-  font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  text-align: center;
-  font-weight: 600;
-}
-
-.experience-block p {
-  color: var(--ivory);
-  line-height: 1.8;
-  font-size: 1.05rem;
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
+.experience-block { background: var(--bg-panel); border: 1px solid var(--border); padding: 2.5rem; margin-bottom: 3rem; }
+.experience-block-title { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 1.5rem; text-transform: uppercase; text-align: center; font-weight: 600; }
+.experience-block p { color: var(--ivory); line-height: 1.8; font-size: 1.05rem; text-align: center; max-width: 700px; margin: 0 auto; }
 .experience-block p + p { margin-top: 1rem; }
 
-.signature {
-  text-align: center;
-  padding-top: 3rem;
-  border-top: 1px solid var(--border);
-  margin-top: 2rem;
-}
+.signature { text-align: center; padding-top: 3rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+.signature-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: var(--gold); margin-bottom: 2rem; line-height: 1.6; }
+.signature-name { font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--ivory); letter-spacing: 0.15em; margin-bottom: 0.5rem; }
+.signature-title { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--ivory-dim); font-size: 1rem; letter-spacing: 0.05em; }
 
-.signature-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.3rem;
-  color: var(--gold);
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.signature-name {
-  font-family: 'Cinzel', serif;
-  font-size: 1.8rem;
-  color: var(--ivory);
-  letter-spacing: 0.15em;
-  margin-bottom: 0.5rem;
-}
-
-.signature-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  color: var(--ivory-dim);
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-}
-
-.copyright {
-  text-align: center;
-  color: var(--gold-dark);
-  font-size: 0.8rem;
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.2em;
-  margin-top: 3rem;
-  text-transform: uppercase;
-}
-
-/* ═══════════════════════════════════════════════════ */
-/* ANIMATIONS */
-/* ═══════════════════════════════════════════════════ */
+.copyright { text-align: center; color: var(--gold-dark); font-size: 0.8rem; font-family: 'Cinzel', serif; letter-spacing: 0.2em; margin-top: 3rem; text-transform: uppercase; }
 
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -1097,16 +733,12 @@ section {
   transform: translateY(0);
 }
 
-::selection {
-  background: var(--gold);
-  color: var(--bg);
-}
-
+::selection { background: var(--gold); color: var(--bg); }
 </style>
 </head>
 <body>
 
-<!-- ═══════════ NAV ═══════════ -->
+<!-- NAV -->
 <nav id="nav">
   <div class="nav-inner">
     <div class="nav-brand">✦ Aube d'Or ✦</div>
@@ -1122,11 +754,10 @@ section {
   </div>
 </nav>
 
-<!-- ═══════════ HERO ═══════════ -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-content">
-
     <div class="crest">
       <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -1136,10 +767,8 @@ section {
             <stop offset="100%" stop-color="#8a6a2e"/>
           </radialGradient>
         </defs>
-        <!-- Outer ring -->
         <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
         <circle cx="60" cy="60" r="48" fill="none" stroke="url(#goldGrad)" stroke-width="0.5" opacity="0.5"/>
-        <!-- Sun rays -->
         <g transform="translate(60 60)">
           <g>
             <path d="M 0 -45 L 3 -20 L 0 -18 L -3 -20 Z" fill="url(#goldGrad)"/>
@@ -1151,7 +780,6 @@ section {
             <path d="M 0 -45 L 3 -20 L 0 -18 L -3 -20 Z" fill="url(#goldGrad)" transform="rotate(270)"/>
             <path d="M 0 -45 L 3 -20 L 0 -18 L -3 -20 Z" fill="url(#goldGrad)" transform="rotate(315)"/>
           </g>
-          <!-- Small rays between -->
           <g opacity="0.7">
             <path d="M 0 -32 L 2 -22 L 0 -21 L -2 -22 Z" fill="#d4a853" transform="rotate(22.5)"/>
             <path d="M 0 -32 L 2 -22 L 0 -21 L -2 -22 Z" fill="#d4a853" transform="rotate(67.5)"/>
@@ -1163,10 +791,8 @@ section {
             <path d="M 0 -32 L 2 -22 L 0 -21 L -2 -22 Z" fill="#d4a853" transform="rotate(337.5)"/>
           </g>
         </g>
-        <!-- Central sun -->
         <circle cx="60" cy="60" r="14" fill="url(#goldGrad)"/>
         <circle cx="60" cy="60" r="9" fill="#0a0805"/>
-        <!-- Center trefoil (black clover) -->
         <g transform="translate(60 60)">
           <ellipse cx="0" cy="-3" rx="2.5" ry="3.5" fill="url(#goldGrad)"/>
           <ellipse cx="-3" cy="1.5" rx="2.5" ry="3.5" fill="url(#goldGrad)" transform="rotate(-60 -3 1.5)"/>
@@ -1210,7 +836,7 @@ section {
   <div class="scroll-hint">Parcourir la candidature</div>
 </section>
 
-<!-- ═══════════ ACCUEIL ═══════════ -->
+<!-- ACCUEIL -->
 <section class="section-accueil" id="accueil">
   <div class="container">
     <div class="section-header reveal">
@@ -1218,18 +844,15 @@ section {
       <h2 class="section-title">Accueil</h2>
       <p class="section-subtitle">Une adresse au Capitaine et au staff</p>
     </div>
-
     <div class="accueil-card reveal">
       <p>Bonjour a tous,</p>
-
-      <p>Je me permets de déposer aujourd'hui ma candidature pour le poste de <strong>Vice-Capitaine de l'Aube d'Or</strong>. Je suis conscient du poids d'un tel rôle, je donnerai mon maximum — que ce soit dans l'encadrement des membres, </p>
+      <p>Je me permets de déposer aujourd'hui ma candidature pour le poste de <strong>Vice-Capitaine de l'Aube d'Or</strong>. Je suis conscient du poids d'un tel rôle, je donnerai mon maximum — que ce soit dans l'encadrement des membres,</p>
       <p>le soutien au Capitaine dans ses décisions, ou la représentation de la compagnie sur le terrain comme en dehors. Servir l'Aube d'Or n'est pas pour moi une ambition personnelle, mais un engagement que je suis prêt à honorer chaque jour, dans les moments de calme comme dans ceux de crise.</p>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════ PRESENTATION RP ═══════════ -->
+<!-- PRESENTATION RP -->
 <section class="section-presentation" id="presentation">
   <div class="container">
     <div class="section-header reveal">
@@ -1237,7 +860,6 @@ section {
       <h2 class="section-title">Présentation RP</h2>
       <p class="section-subtitle">Identité, origine, attache</p>
     </div>
-
     <div class="id-card reveal">
       <div class="id-card-header">
         <div class="id-card-seal">
@@ -1252,44 +874,36 @@ section {
           <div class="id-card-role">Candidat Vice-Capitaine</div>
         </div>
       </div>
-
       <div class="id-grid">
         <div class="id-field">
           <div class="id-field-label">Nom & Prénom</div>
           <div class="id-field-value">Soyaki Kori</div>
         </div>
-
         <div class="id-field">
           <div class="id-field-label">Âge</div>
           <div class="id-field-value">17 ans</div>
         </div>
-
         <div class="id-field">
           <div class="id-field-label">Royaume d'origine</div>
           <div class="id-field-value">Clover</div>
         </div>
-
         <div class="id-field">
           <div class="id-field-label">Lignée</div>
-          <div class="id-field-value">Famille Soyaki </div>
+          <div class="id-field-value">Famille Soyaki</div>
         </div>
-
         <div class="id-field">
           <div class="id-field-label">Frère aîné</div>
           <div class="id-field-value">Chizen Soyaki</div>
           <div class="id-field-value">Kael Soyaki</div>
         </div>
-
         <div class="id-field">
           <div class="id-field-label">Père</div>
           <div class="id-field-value">Grand chevalier-mage de la Compagnie Perdue, tombé en mission</div>
         </div>
-
         <div class="id-field">
           <div class="id-field-label">Attache actuelle</div>
           <div class="id-field-value">Candidat à l'Aube d'Or</div>
         </div>
-
         <div class="id-field">
           <div class="id-field-label">Magie</div>
           <div class="id-field-value italic">?????</div>
@@ -1299,7 +913,7 @@ section {
   </div>
 </section>
 
-<!-- ═══════════ HISTOIRE ═══════════ -->
+<!-- HISTOIRE -->
 <section class="section-histoire" id="histoire">
   <div class="container">
     <div class="section-header reveal">
@@ -1309,31 +923,46 @@ section {
     </div>
 
     <div class="histoire-content reveal">
-      <p>Kori Soyaki n'aurait pas dû survivre. Sa mère mourut peu après sa naissance. Dans quelles circonstances exactement ? Personne ne le sait vraiment. Ou du moins, personne n'a jamais jugé utile de lui expliquer. Il a grandi avec ce trou-là, cette question sans réponse qui revient parfois la nuit, et à laquelle il a fini par arrêter de chercher une réponse. Certaines choses ne s'expliquent pas. Il est vivant. C'est tout ce qu'il sait.</p>
-      <p>Il fut recueilli par une famille sans histoire. Des gens simples, installés dans un coin ordinaire de Clover, qui ne savaient pas qui il était et s'en fichaient probablement un peu. Ils lui donnèrent un toit, de la nourriture, et un nom qu'il porta sans vraiment comprendre ce qu'il signifiait. Soyaki. Un grand nom, paraît-il. Un nom connu dans tout le royaume. Kori, lui, grandissait avec ce nom comme on porte un vêtement trop grand — sans savoir s'il finira par rentrer dedans un jour.</p>
+
+      <!-- Bloc I -->
+      <p class="histoire-block-open">Kori Soyaki n'aurait pas dû survivre. Sa mère mourut peu après sa naissance. Dans quelles circonstances exactement ? Personne ne le sait vraiment. Ou du moins, personne n'a jamais jugé utile de lui expliquer. Il a grandi avec ce trou-là, cette question sans réponse qui revient parfois la nuit, et à laquelle il a fini par arrêter de chercher une réponse. Certaines choses ne s'expliquent pas. Il est vivant. C'est tout ce qu'il sait.</p>
+
+      <p>Il fut recueilli par une famille sans histoire. Des gens simples, installés dans un coin ordinaire de Clover, qui ne savaient pas qui il était et s'en fichaient probablement un peu. Ils lui donnèrent un toit, de la nourriture, et un nom qu'il porta sans vraiment comprendre ce qu'il signifiait. <em>Soyaki.</em> Un grand nom, paraît-il. Un nom connu dans tout le royaume. Kori, lui, grandissait avec ce nom comme on porte un vêtement trop grand — sans savoir s'il finira par rentrer dedans un jour.</p>
+
       <p>Pas de père pour lui apprendre à se battre. Pas de mère pour lui apprendre à se méfier. Juste lui, un foyer qui faisait ce qu'il pouvait, et cette sensation bizarre qu'il traînait depuis tout petit — quelque chose de lourd, de silencieux, qui vivait en lui sans qu'il puisse mettre un mot dessus.</p>
+
       <p>Son mana, il ne savait pas encore que c'était ça. Il savait juste que les autres enfants ne semblaient pas ressentir ce qu'il ressentait. Que parfois, sans raison, l'air autour de lui devenait différent. Ses tuteurs ne surent jamais quoi en faire. Ils n'en parlèrent pas. Kori non plus. Il apprit à vivre avec, comme on apprend à vivre avec une cicatrice qu'on ne peut ni montrer ni vraiment cacher.</p>
 
-      <p>C'est Chizen qui a élevé Kori autant qu'il l'a pu. Pendant que son frère s'entraînait avec acharnement pour honorer la mémoire de leur père, Kori grandissait dans son ombre — <strong>observateur, silencieux, studieux</strong>. Là où Chizen voulait devenir fort pour être <em>vu</em>, Kori a très vite compris qu'il serait plus utile en restant <em>invisible</em>. Les autres enfants ne l'ont jamais maltraité comme ils l'avaient fait avec son frère, parce qu'ils ne le remarquaient tout simplement pas. Kori a fait de cet effacement une force.</p>
+      <div class="histoire-divider"><span>✦</span></div>
+
+      <!-- Bloc II -->
+      <p>Son enfance ne fut pas malheureuse. Mais elle fut solitaire d'une façon particulière — pas celle de quelqu'un qu'on rejette, mais celle de quelqu'un qui n'arrive jamais tout à fait à s'intégrer sans savoir pourquoi. Il regardait les autres jouer, se disputer, se réconcilier, et il observait tout ça de loin avec l'impression d'être un spectateur dans une pièce dont il ne connaissait pas le texte.</p>
+
+      <p>Il compensa comme il put. Il écouta beaucoup. Il parla peu. Il retint des choses que les autres oubliaient en cinq minutes — une façon de faire, un réflexe dans un combat qu'il avait vu de loin, une erreur commise par quelqu'un d'autre qu'il nota mentalement pour ne jamais la reproduire. Ce n'était pas une méthode consciente. C'était juste ce qu'il faisait naturellement, faute d'autre chose.</p>
+
+      <p>Il entendit parler de la famille Soyaki, comme tout le monde à Clover. Un nom respecté. Une lignée de chevaliers mages puissants. Il entendit parler de Chizen Soyaki, dont la réputation commençait à circuler. Il n'y pensa pas à deux fois. Soyaki était son nom, oui — mais ce nom ne lui avait jamais rien apporté. Il ne lui avait pas ouvert de portes, pas offert de maître, pas donné de famille. Alors il continua d'avancer sans y accorder plus d'importance que ça.</p>
 
       <div class="histoire-divider"><span>✦</span></div>
 
-      <p>Quand Chizen a été pris sous l'aile de <strong>Solarius Valdorré</strong>, Kori a continué son propre chemin. Il a lu tous les manuels de stratégie militaire que la bibliothèque familiale contenait, étudié les organisations des neuf compagnies, mémorisé les noms des capitaines, des vice-capitaines, leurs magies, leurs faits d'armes. Il a appris à manier l'épée avec un vieux maître d'armes de Clover, à soigner les blessures légères, à rédiger des rapports clairs.</p>
+      <!-- Bloc III — Tour de grimoire -->
+      <p class="histoire-block-open">À quinze ans, il se rendit à la tour de grimoire. Il n'avait pas d'attentes particulières. Il y alla parce que c'est ce qu'on fait à quinze ans à Clover, pas parce qu'il rêvait d'un grand destin. Il attendit son tour, les mains dans les poches, un peu en retrait comme toujours. Quand le grimoire vint à lui, il se passa quelque chose.</p>
 
-      <p>Il s'est forgé un esprit d'intendance et de discipline avant même d'avoir reçu son grimoire.</p>
-
-      <p>À <strong>15 ans</strong>, il reçoit son grimoire à la Tour. Il ne le montre à personne pendant plusieurs mois, pas même à Chizen. Il veut d'abord le comprendre seul, apprivoiser sa magie sans pression, sans attente extérieure.</p>
+      <p>Pas quelque chose de spectaculaire. Pas d'explosion, pas de lumière aveuglante. Juste cette sensation — cette chose silencieuse qu'il portait depuis toujours — qui bougea. Comme si elle venait enfin de trouver un endroit où aller. Il rentra chez lui ce soir-là, posa le grimoire sur la table, et resta longtemps assis sans rien faire. Pas par émotion débordante. Plutôt parce qu'il sentait confusément que quelque chose venait de changer, et qu'il avait besoin de temps pour comprendre quoi.</p>
 
       <div class="histoire-divider"><span>✦</span></div>
 
-      <p>À <strong>17 ans</strong>, il estime être prêt. Il ne vise pas le prestige. Il ne vise pas la gloire. Il vise une place où son travail servira directement à la protection de Clover — et où il pourra, discrètement, veiller aussi sur son frère qui, lui, est exposé aux premières loges du pouvoir.</p>
+      <!-- Bloc IV — Apprentissage & Aube d'Or -->
+      <p>Les deux années qui suivirent furent celles d'un apprentissage sans filet. Pas de maître pour le guider. Pas de structure pour le former. Juste lui, son grimoire, et ce qu'il arrivait à grappiller en observant les chevaliers mages de loin. Il échoua souvent. Il recommença. Il n'avait ni la rage froide de quelqu'un qui veut prouver quelque chose, ni la méthode de quelqu'un qu'on a bien formé. Il avait juste de la constance. Une façon tranquille et un peu têtue d'avancer, même quand ça n'avançait pas vraiment.</p>
 
-      <p>L'<strong>Aube d'Or</strong> est la compagnie qu'il a choisie. Pour sa rigueur. Pour son exigence. Pour sa réputation de compagnie d'élite qui sélectionne sur la valeur réelle et non sur le nom. Et pour une raison plus intime qu'il ne dira qu'au Capitaine en personne.</p>
+      <p class="histoire-pullquote">Il ne sait pas qu'il est le dernier d'une lignée dont personne ne lui a jamais parlé, liée à des gens qu'il n'a jamais rencontrés, à travers une histoire qu'il ne connaît pas encore.</p>
+
+      <p>À dix-sept ans, il se présente aux portes de l'Aube d'Or. Il ne sait pas que le Capitaine de cette compagnie porte le même nom que lui. Il ne sait pas que quelque part dans ce royaume, un autre Soyaki sert l'Empereur-Mage. Tout ce qu'il sait, c'est qu'il a dix-sept ans, un grimoire, et pour la première fois, l'impression d'avancer vers quelque chose plutôt que de simplement exister à côté. Le reste, il le découvrira en chemin.</p>
+
     </div>
   </div>
 </section>
 
-<!-- ═══════════ MOTIVATION ═══════════ -->
+<!-- MOTIVATION -->
 <section class="section-motivation" id="motivation">
   <div class="container">
     <div class="section-header reveal">
@@ -1341,39 +970,30 @@ section {
       <h2 class="section-title">Motivation</h2>
       <p class="section-subtitle">Pourquoi ce poste, pourquoi maintenant</p>
     </div>
-
     <div class="motivation-grid">
       <div class="motivation-text reveal">
         <p>Je candidate au poste de <strong>Vice-Capitaine</strong>, pas de simple membre, pour une raison précise : c'est le rôle où je peux être le plus utile à la compagnie, compte tenu de mon caractère et de mes compétences.</p>
-
         <p>Je ne suis pas un chevalier-mage qui cherche à briller au premier rang. Je suis un chevalier-mage qui aime <strong>organiser, épauler, structurer, anticiper</strong>. Un Capitaine a besoin d'un bras droit qui gère les dossiers qu'il n'a pas le temps de regarder, qui connaît chaque membre personnellement, qui prend les décisions mineures sans déranger son supérieur, et qui sait se taire quand il le faut.</p>
-
         <p>Dans le contexte actuel — Clover affaibli, Spade qui se reconstitue, la Triade sombre de retour, les anomalies qui se multiplient — les compagnies n'ont pas le droit à l'approximation. Chaque recrue doit être évaluée sérieusement. Chaque mission doit être préparée avec rigueur. Chaque perte doit être comprise pour ne pas être répétée.</p>
-
         <p>Enfin : mon frère sert l'Empereur-Mage au palais. Je servirai Clover dans une compagnie. <em>À nous deux, de deux côtés différents, nous continuerons ce que notre père a commencé.</em></p>
       </div>
-
       <div class="motivation-visual reveal">
         <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <path id="circlePath" d="M 200,200 m -150,0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0"/>
           </defs>
-          <!-- Outer rings -->
           <circle cx="200" cy="200" r="180" fill="none" stroke="#d4a853" stroke-width="0.8" opacity="0.3"/>
           <circle cx="200" cy="200" r="170" fill="none" stroke="#d4a853" stroke-width="0.4" opacity="0.5"/>
           <circle cx="200" cy="200" r="120" fill="none" stroke="#d4a853" stroke-width="0.3" opacity="0.4"/>
-          <!-- Rune circle text -->
           <text font-family="Cinzel" font-size="11" fill="#d4a853" letter-spacing="8" opacity="0.7">
             <textPath href="#circlePath">✦ SERVIR ✦ PROTÉGER ✦ ÉPAULER ✦ DURER ✦ </textPath>
           </text>
-          <!-- Decorative corners -->
           <g stroke="#d4a853" stroke-width="1" fill="none" opacity="0.6">
             <circle cx="200" cy="50" r="4"/>
             <circle cx="200" cy="350" r="4"/>
             <circle cx="50" cy="200" r="4"/>
             <circle cx="350" cy="200" r="4"/>
           </g>
-          <!-- 8-pointed star -->
           <g transform="translate(200 200)" opacity="0.8">
             <path d="M 0 -60 L 10 -10 L 60 0 L 10 10 L 0 60 L -10 10 L -60 0 L -10 -10 Z" fill="none" stroke="#d4a853" stroke-width="1"/>
             <path d="M 0 -40 L 7 -7 L 40 0 L 7 7 L 0 40 L -7 7 L -40 0 L -7 -7 Z" fill="#d4a853" opacity="0.3"/>
@@ -1389,7 +1009,7 @@ section {
   </div>
 </section>
 
-<!-- ═══════════ MES DEVOIRS ═══════════ -->
+<!-- DEVOIRS -->
 <section class="section-devoirs" id="devoirs">
   <div class="container">
     <div class="section-header reveal">
@@ -1397,9 +1017,7 @@ section {
       <h2 class="section-title">Mes Devoirs</h2>
       <p class="section-subtitle">Les engagements d'un Vice-Capitaine</p>
     </div>
-
     <div class="devoirs-grid">
-
       <div class="devoir-card reveal">
         <div class="devoir-card-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2 L15 8 L22 9 L17 14 L18 21 L12 17 L6 21 L7 14 L2 9 L9 8 Z"/></svg>
@@ -1412,7 +1030,6 @@ section {
           <li>Respecter ses décisions même en cas de désaccord. Discuter en privé, jamais en public.</li>
         </ul>
       </div>
-
       <div class="devoir-card reveal">
         <div class="devoir-card-icon">
           <svg viewBox="0 0 24 24"><path d="M12 12 m-5 0 a5 5 0 1 0 10 0 a5 5 0 1 0 -10 0"/><path d="M4 21 Q 4 15 12 15 Q 20 15 20 21"/></svg>
@@ -1426,7 +1043,6 @@ section {
           <li>Être accessible : un membre doit pouvoir me parler sans sentir qu'il dérange.</li>
         </ul>
       </div>
-
       <div class="devoir-card reveal">
         <div class="devoir-card-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2 L4 6 V 12 Q 4 18 12 22 Q 20 18 20 12 V 6 Z"/></svg>
@@ -1442,7 +1058,7 @@ section {
   </div>
 </section>
 
-<!-- ═══════════ HORAIRES ═══════════ -->
+<!-- HORAIRES -->
 <section class="section-horaires" id="horaires">
   <div class="container">
     <div class="section-header reveal">
@@ -1450,49 +1066,43 @@ section {
       <h2 class="section-title">Horaires</h2>
       <p class="section-subtitle">Disponibilité hebdomadaire</p>
     </div>
-
-
+    <div class="horaires-grid reveal">
+      <div class="day-card">
+        <div class="day-name">Lundi</div>
+        <div class="day-hours">18h<br>00h</div>
       </div>
-
-      <div class="horaires-grid reveal">
-        <div class="day-card">
-          <div class="day-name">Lundi</div>
-          <div class="day-hours">18h<br>00h</div>
-        </div>
-        <div class="day-card">
-          <div class="day-name">Mardi</div>
-          <div class="day-hours">18h<br>00h</div>
-        </div>
-        <div class="day-card">
-          <div class="day-name">Mercredi</div>
-          <div class="day-hours">18h<br>00h</div>
-        </div>
-        <div class="day-card">
-          <div class="day-name">Jeudi</div>
-          <div class="day-hours">18h<br>00h</div>
-        </div>
-        <div class="day-card special">
-          <div class="day-name">Vendredi</div>
-          <div class="day-hours">21h<br>00h</div>
-        </div>
-        <div class="day-card">
-          <div class="day-name">Samedi</div>
-          <div class="day-hours">18h<br>00h</div>
-        </div>
-        <div class="day-card">
-          <div class="day-name">Dimanche</div>
-          <div class="day-hours">18h<br>00h</div>
-        </div>
+      <div class="day-card">
+        <div class="day-name">Mardi</div>
+        <div class="day-hours">18h<br>00h</div>
       </div>
-
-      <p class="horaires-note reveal">
-        En cas d'absence imprévue, je préviendrai le Capitaine et les membres concernés dès que possible.
-      </p>
+      <div class="day-card">
+        <div class="day-name">Mercredi</div>
+        <div class="day-hours">18h<br>00h</div>
+      </div>
+      <div class="day-card">
+        <div class="day-name">Jeudi</div>
+        <div class="day-hours">18h<br>00h</div>
+      </div>
+      <div class="day-card special">
+        <div class="day-name">Vendredi</div>
+        <div class="day-hours">21h<br>00h</div>
+      </div>
+      <div class="day-card">
+        <div class="day-name">Samedi</div>
+        <div class="day-hours">18h<br>00h</div>
+      </div>
+      <div class="day-card">
+        <div class="day-name">Dimanche</div>
+        <div class="day-hours">18h<br>00h</div>
+      </div>
     </div>
+    <p class="horaires-note reveal">
+      En cas d'absence imprévue, je préviendrai le Capitaine et les membres concernés dès que possible.
+    </p>
   </div>
 </section>
 
-<!-- ═══════════ CARACTERE ═══════════ -->
+<!-- CARACTERE -->
 <section class="section-caractere" id="caractere">
   <div class="container">
     <div class="section-header reveal">
@@ -1500,9 +1110,7 @@ section {
       <h2 class="section-title">Caractère du Personnage</h2>
       <p class="section-subtitle">L'âme de Soyaki Kori</p>
     </div>
-
     <div class="traits-layout">
-
       <div class="trait-block primary reveal">
         <div class="trait-block-title">Traits Dominants</div>
         <div class="traits-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
@@ -1528,7 +1136,6 @@ section {
           </div>
         </div>
       </div>
-
       <div class="trait-block reveal">
         <div class="trait-block-title">Traits Secondaires</div>
         <div class="traits-list">
@@ -1546,7 +1153,6 @@ section {
           </div>
         </div>
       </div>
-
       <div class="trait-block reveal">
         <div class="trait-block-title">Faiblesses Assumées</div>
         <div class="traits-list">
@@ -1568,7 +1174,6 @@ section {
           </div>
         </div>
       </div>
-
     </div>
 
     <div class="trait-block-title reveal" style="text-align: center; margin-top: 3rem; margin-bottom: 2rem;">Relation aux Autres</div>
@@ -1591,14 +1196,12 @@ section {
         <div class="relation-desc">Froid, méthodique, sans haine personnelle.</div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ═══════════ FOOTER / OOC ═══════════ -->
+<!-- FOOTER / OOC -->
 <section class="section-footer">
   <div class="footer-content">
-
     <div class="footer-seal">
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <circle cx="50" cy="50" r="46" fill="none" stroke="#d4a853" stroke-width="1"/>
@@ -1640,7 +1243,6 @@ section {
 
     <div class="signature">
       <p class="signature-quote">« Je reste à la disposition du Capitaine et du staff pour un entretien,<br>un test de RP, ou tout élément permettant de juger de ma candidature. »</p>
-
       <div class="signature-name">Soyaki Kori</div>
       <div class="signature-title">Candidat Vice-Capitaine — Compagnie de l'Aube d'Or</div>
     </div>
@@ -1650,25 +1252,20 @@ section {
 </section>
 
 <script>
-// Nav visibility
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 400) nav.classList.add('visible');
   else nav.classList.remove('visible');
 });
 
-// Reveal animation on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Smooth stagger on reveal groups
 document.querySelectorAll('.devoirs-grid .reveal, .relations-grid .reveal, .ooc-grid > *').forEach((el, i) => {
   el.style.transitionDelay = `${i * 0.1}s`;
 });
